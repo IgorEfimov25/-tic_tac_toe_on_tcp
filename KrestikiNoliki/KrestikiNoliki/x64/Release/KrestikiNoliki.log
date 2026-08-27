@@ -1,0 +1,9 @@
+﻿  GlobalSettings.cpp
+C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\GlobalSettings.cpp(1,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+  Source.cpp
+  TCPConnect.cpp
+  Создание кода
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+  All 494 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  KrestikiNoliki.vcxproj -> C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\x64\Release\KrestikiNoliki.exe

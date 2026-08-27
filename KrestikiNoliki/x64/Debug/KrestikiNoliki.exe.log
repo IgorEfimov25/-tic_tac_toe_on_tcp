@@ -1,0 +1,126 @@
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\x64\Debug\KrestikiNoliki.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FF9C5334DB5 в функции stricmp_l(). Попытка прочесть данные по адресу 0xFFFFFFFFFFFFFFFF. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 166, Date: 2020-07-08 18:51:07 +0400], Instance: 0x00007FF7882F0078 (64-bit), Flags: Cmdre0, Thread: 0x6020 (Main), GetLastError(): 187 (Не найдено указанное имя системного семафора), errno: 2 (No such file or directory), _doserrno: 3 (No such process). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF9C5334DB5 in C:\Windows\SYSTEM32\ucrtbased.dll: stricmp_l()
+# 2 0x00007FF78829DC35 in C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\x64\Debug\KrestikiNoliki.exe: `anonymous namespace'::TX::_txSetProcAddress() at C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\TXLib.h (9167)
+# 3 0x00007FF78828D568 in C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\x64\Debug\KrestikiNoliki.exe: `anonymous namespace'::TX::_txInitialize() at C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\TXLib.h (8129)
+# 4 0x00007FF78824F6D7 in C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\x64\Debug\KrestikiNoliki.exe: `anonymous namespace'::TX::`dynamic initializer for '_txInitialized''() at C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\TXLib.h (7912)
+# 5 0x00007FF9C52E24F8 in C:\Windows\SYSTEM32\ucrtbased.dll: initterm()
+# 6 0x00007FF7882BD87B in C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\x64\Debug\KrestikiNoliki.exe: __scrt_common_main_seh() at D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl (256)
+# 7 0x00007FF7882BD7DE in C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\x64\Debug\KrestikiNoliki.exe: __scrt_common_main() at D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl (330)
+# 8 0x00007FF7882BDACE in C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\x64\Debug\KrestikiNoliki.exe: mainCRTStartup() at D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp (16)
+# 9 0x00007FFA70D27374 in C:\Windows\System32\KERNEL32.dll: BaseThreadInitThunk()
+#10 0x00007FFA71F1CC91 in C:\Windows\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in unsigned __int64 __cdecl `anonymous-namespace'::TX::_txSetProcAddress(const char [],unsigned __int64,const char [],int,struct HINSTANCE__ *,bool) at C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\TXLib.h (9154):
+
+   9152: $       if (dllName && _stricmp (impDll, dllName) != 0) continue;
+   9153: 
+=> 9154: $       for (thunk0 = RVA_ (IMAGE_THUNK_DATA*, module, desc->OriginalFirstThunk),
+   9155:              thunk1 = RVA_ (IMAGE_THUNK_DATA*, module, desc->FirstThunk);
+   9156: 
+
+# 1 in int __cdecl `anonymous-namespace'::TX::_txInitialize(void) at C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\TXLib.h (8129):
+
+   8127: $   _txSetProcAddress ("UnhandledExceptionFilter",    (uintptr_t) _txUnhandledExceptionFilter,      "KERNEL32.DLL", true);
+   8128: $   _txSetProcAddress ("SetUnhandledExceptionFilter", (uintptr_t) _txOnSetUnhandledExceptionFilter, "KERNEL32.DLL");
+=> 8129: $   _txSetProcAddress ("exit",                        (uintptr_t) _txOnExit);
+   8130: $   _txSetProcAddress ("_cexit",                      (uintptr_t) _txOnCExit);
+   8131: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 166, Date: 2020-07-08 18:51:07 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\TXLib.h
+Compiled:	May 27 2026 17:54:30, MSVS 1950, std=199711L, MSVC Runtime, 64-bit, DEBUG
+Started:	May 27 2026 17:54:35
+
+Run file:	C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\x64\Debug\KrestikiNoliki.exe
+Directory:	C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\x64\Debug
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\x64\Debug\KrestikiNoliki.exe,
+
+ВНЕЗАПНО: signal (11, 0x210F8C20): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FF9C5334DB5 в функции stricmp_l(). Попытка прочесть данные по адресу 0xFFFFFFFFFFFFFFFF. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 166, Date: 2020-07-08 18:51:07 +0400], Instance: 0x00007FF7882F0078 (64-bit), Flags: Cmdre0, Thread: 0x6020 (Main), GetLastError(): 187 (Не найдено указанное имя системного семафора), errno: 2 (No such file or directory), _doserrno: 3 (No such process). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF9C5334DB5 in C:\Windows\SYSTEM32\ucrtbased.dll: stricmp_l()
+# 2 0x00007FF78829DC35 in C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\x64\Debug\KrestikiNoliki.exe: `anonymous namespace'::TX::_txSetProcAddress() at C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\TXLib.h (9167)
+# 3 0x00007FF78828D568 in C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\x64\Debug\KrestikiNoliki.exe: `anonymous namespace'::TX::_txInitialize() at C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\TXLib.h (8129)
+# 4 0x00007FF78824F6D7 in C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\x64\Debug\KrestikiNoliki.exe: `anonymous namespace'::TX::`dynamic initializer for '_txInitialized''() at C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\TXLib.h (7912)
+# 5 0x00007FF9C52E24F8 in C:\Windows\SYSTEM32\ucrtbased.dll: initterm()
+# 6 0x00007FF7882BD87B in C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\x64\Debug\KrestikiNoliki.exe: __scrt_common_main_seh() at D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl (256)
+# 7 0x00007FF7882BD7DE in C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\x64\Debug\KrestikiNoliki.exe: __scrt_common_main() at D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl (330)
+# 8 0x00007FF7882BDACE in C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\x64\Debug\KrestikiNoliki.exe: mainCRTStartup() at D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp (16)
+# 9 0x00007FFA70D27374 in C:\Windows\System32\KERNEL32.dll: BaseThreadInitThunk()
+#10 0x00007FFA71F1CC91 in C:\Windows\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in unsigned __int64 __cdecl `anonymous-namespace'::TX::_txSetProcAddress(const char [],unsigned __int64,const char [],int,struct HINSTANCE__ *,bool) at C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\TXLib.h (9154):
+
+   9152: $       if (dllName && _stricmp (impDll, dllName) != 0) continue;
+   9153: 
+=> 9154: $       for (thunk0 = RVA_ (IMAGE_THUNK_DATA*, module, desc->OriginalFirstThunk),
+   9155:              thunk1 = RVA_ (IMAGE_THUNK_DATA*, module, desc->FirstThunk);
+   9156: 
+
+# 1 in int __cdecl `anonymous-namespace'::TX::_txInitialize(void) at C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\TXLib.h (8129):
+
+   8127: $   _txSetProcAddress ("UnhandledExceptionFilter",    (uintptr_t) _txUnhandledExceptionFilter,      "KERNEL32.DLL", true);
+   8128: $   _txSetProcAddress ("SetUnhandledExceptionFilter", (uintptr_t) _txOnSetUnhandledExceptionFilter, "KERNEL32.DLL");
+=> 8129: $   _txSetProcAddress ("exit",                        (uintptr_t) _txOnExit);
+   8130: $   _txSetProcAddress ("_cexit",                      (uintptr_t) _txOnCExit);
+   8131: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 166, Date: 2020-07-08 18:51:07 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\TXLib.h
+Compiled:	May 27 2026 17:54:30, MSVS 1950, std=199711L, MSVC Runtime, 64-bit, DEBUG
+Started:	May 27 2026 17:54:35
+
+Run file:	C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\x64\Debug\KrestikiNoliki.exe
+Directory:	C:\Users\Igorek\Desktop\Kursach\Code\KrestikiNoliki\x64\Debug
+
+--------------------------------------------------
